@@ -6,7 +6,7 @@ Version: Alpha 4.1
 VIDEO DEMO: https://www.youtube.com/watch?v=JJ2tp6DD_7A
 
 
-This game runs on Python 3.5 with Pygame module https://www.pygame.org/docs/
+This game runs on Python 3.5 with Pygame module https://www.pygame.org/
 
 Visual assets are from FinalGateStudios (taken from here: https://finalgatestudios.itch.io/ninja-asset-pack)
 
