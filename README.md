@@ -15,3 +15,6 @@ This was once a project put in a private repository because I wanted to learn ga
 
 
 Please keep in mind that this was primarily experiemental at first so there's a lot of copy/paste comments, uncommented blocks of code, and there's even some 
+
+
+Contact: sanchez.emmanuelm@gmail.com
