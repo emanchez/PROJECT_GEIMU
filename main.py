@@ -85,6 +85,7 @@ def scrollCamera(player):
 
 #PLAYER STUFF
 player_ = Player(50,640)
+# TODO: MOVE INTO PLAYER CLASS
 hitBoxRect = player_.rect.copy()
 hitBoxRect.width /= 2
 hitBoxRect.height /= 2
@@ -98,7 +99,7 @@ entities2 = pygame.sprite.OrderedUpdates() # built in functions to draw objects 
 
 level_ = Level(levelCode,entities2)
 
-
+# TODO: CLEAN UP TEST RECTS (NO LONGER IN USE)
 testRects = [
     Block(Rect(530,305,100,100),"1", BlockType.HYBRID,(0,0,0),True),
     Block(Rect(-100,groundPos+20,1000,10),"2", BlockType.GROUND,(0,0,0),True),
@@ -138,6 +139,7 @@ while not mainGame.isCrashed() and not mainGame.isQuit():
     mainGame.gameDisplay.fill((255,255,255)) # fill the screen with white
 
     ##COLLISION
+    # TODO: MOVE INTO PLAYER CLASS (PLEASE THIS HAS GONE ON TOO LONG)
     hitBoxRect.center = player_.rect.center # this is a smaller box inside the player thats half the players size which will handle our logical collisions
 ##    pygame.draw.rect(mainGame.gameDisplay, (255,0,0),hitBoxRect) # debug 
 
@@ -233,6 +235,7 @@ while not mainGame.isCrashed() and not mainGame.isQuit():
     #PRIMARY EVENT HANDLE BLOCK##################
     
     #PLAYER MOVEMENT
+    # TODO: MOVE INPUTS AFFECTING THE PLAYER INTO THE PLAYER CLASS
     '''Player movement comes first because we want to cancel any movement inputs when it comes to stuff like wall jumping'''
     keys = pygame.key.get_pressed() # gets movement keys pressed ; I learned that these do not need to be in the event handle block and that they do read buttons that are held down AS LONG AS THIS IS OUTSIDE OF ANY LOOP (like before, it was inside of the event for loop which broke its functionality)
     if keys[pygame.K_LEFT] and keys[pygame.K_RIGHT] and not player_.dashing: # if both are held down at the same time, player stops moving/doesnt move
@@ -316,7 +319,7 @@ while not mainGame.isCrashed() and not mainGame.isQuit():
     soloEntity.draw(mainGame.gameDisplay)
     
 
-    #DEBUG
+    #DEBUG; ALL OF THE STATS DISPLAYED ON THE TOP-LEFT CORNER OF THE SCREEN
     ##POSITION
     mainGame.gameDisplay.blit(font.render("x_pos = " + str(player_.rect.left), 0, (0,0,0)),(5,fontSpace * 0))
     mainGame.gameDisplay.blit(font.render("y_pos = " + str(player_.rect.top), 0, (0,0,0)),(5,fontSpace * 1))
@@ -360,5 +363,6 @@ while not mainGame.isCrashed() and not mainGame.isQuit():
         
 if mainGame.isCrashed():
     print("the game crashed! exiting")
+    #TODO: ADD LOGIC TO DETERMINE WHY THE GAME HAS CRASHED AND PRINT REASON TO THE CONSOLE
 del mainGame
 input()
