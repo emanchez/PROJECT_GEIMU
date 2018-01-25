@@ -1,4 +1,4 @@
-5#PROJECT GEIMU ALPHA VER 4.1 - more blocks and stuff
+#PROJECT GEIMU ALPHA VER 4.1 - more blocks and stuff
 import os, sys, time
 import pygame
 from pygame.locals import *
